@@ -20,7 +20,7 @@ RUN mvn package -DskipTests
 FROM openjdk:11-jre-slim
 
 # Copia el archivo JAR generado en la etapa anterior
-COPY --from=builder /app/target/your-app.jar /app.jar
+COPY --from=builder /app/target/MonitoringService-0.0.1-SNAPSHOT.jar /app.jar
 
 # Define el comando de inicio de la aplicación
 CMD ["java", "-jar", "/app.jar"]
